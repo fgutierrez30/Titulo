@@ -8,8 +8,8 @@
         <%@include file="master/head.jsp" %>
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
-        <jsp:include page="./getAllTrabajos" flush="true"/>
-        <jsp:useBean id="trabajosPen" class="cl.fgutierrez.legalwork.dto.TrabajoTpTrabajoClienteDTO" scope="page"></jsp:useBean>
+        <jsp:include page="./getAsigXID" flush="true"/>
+        <jsp:useBean id="trabajosAsig" class="cl.fgutierrez.legalwork.dto.AsignaDTO" scope="page"></jsp:useBean>
         
         
         <c:choose>
@@ -18,7 +18,7 @@
             </c:when>
             <c:otherwise>
                 <jsp:useBean id="usuarioConectado" class="cl.fgutierrez.legalwork.dto.UsuarioPerfilDTO" scope="session"></jsp:useBean>  
-                
+                <input type="hidden" name="idUsr" value="${usuarioConectado.usr.idUsr}"/>
                 
                 <%@include file="master/header.jsp" %>
                 <%@include file="menu.jsp" %>
@@ -60,15 +60,10 @@
                   <th>Fecha de Entrega</th>
                   <th>Estado</th>
                 </tr>
-                <c:forEach items="${listTrabajosPen}" var="trabajosPen">
+                <c:forEach items="${listadoAsig}" var="asigUsr">
                 <tr>
-                    <td><c:out value="${trabajosPen.trabajo.idTrabajo}"/></td>
-                    <td><c:out value="${trabajosPen.cliente.razonSocial}"/></td>
-                    <td><c:out value="${trabajosPen.tpTrabajo.nomTipoTrabajo}"/></td>
-                    <td><c:out value="${trabajosPen.trabajo.detTrabajo}"/></td>
-                    <td><fmt:formatDate pattern="dd-MM-yyyy" value="${trabajosPen.trabajo.fechaInicioTrabajo}"/></td>
-                    <td><fmt:formatDate pattern="dd-MM-yyyy" value="${trabajosPen.trabajo.fechaFinTrabajo}"/></td>
-                    <td><span class="label label-success"><c:out value="${trabajosPen.trabajo.estadoTrabajo}"/></span></td>
+                    <td><c:out value="${asigUsr.usr.nomusr}"/></td>
+                    
                     
                   <td><button data-toggle="modal" data-target="#view-modal" data-id="${trabajosPen.trabajo.idTrabajo}" id="getTrabajo" class="btn btn-sm btn-danger">Editar</button></td>
                                   

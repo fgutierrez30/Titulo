@@ -37,4 +37,9 @@ public class AsignaSessionBean {
           return em.createNamedQuery("Asignacion.listado", AsignaDTO.class).getResultList();
           
       }
+      
+      public List<AsignaDTO> listaAsignadosXID(int idUsr)
+      {
+          return em.createNamedQuery("Asignacion.listadoXUsr", AsignaDTO.class).setParameter("id_usr", idUsr).getResultList();
+      }
 }

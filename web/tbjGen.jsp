@@ -56,14 +56,15 @@
                   <th>Fecha de Asignacion</th>
                   <th>Trabajo</th>
                   <th>Fecha Vencimiento</th>
-                                  </tr>
+               </tr>
                 
                                   
                  <c:forEach items="${listtrabajosAsig}" var="trabajosAsig">
                 <tr>
-                    <td><c:out value="${trabajosAsig.usr.nomUsr}"/></td>
-                    
-                    
+                    <td><c:out value="${trabajosAsig.usr.nomUsr}"/> <c:out value="${trabajosAsig.usr.apellUsr}"/></td>
+                    <td><fmt:formatDate pattern="dd-MM-yyyy" value="${trabajosAsig.asig.fechaAsignacion}" /> </td>
+                    <td><c:out value="${trabajosAsig.tbj.detTrabajo}"/></td>
+                    <td><fmt:formatDate pattern="dd-MM-yyyy" value="${trabajosAsig.tbj.fechaFinTrabajo}"/></td>
                   <td><button>Editar</button></td>
                                   
                 </tr>
