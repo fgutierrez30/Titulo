@@ -1,56 +1,54 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package cl.fgutierrez.legalwork.dto;
 
+import cl.fgutierrez.legalwork.entidades.Asignacion;
 import cl.fgutierrez.legalwork.entidades.Trabajo;
 import cl.fgutierrez.legalwork.entidades.Usuario;
-import java.util.Date;
+import java.io.Serializable;
 
 
-public class AsignaDTO {
+
+public class AsignaDTO implements Serializable{
     
-    private Date fecha_asignacion;
-    private int estado;
-    private Trabajo idtrabajo;
-    private Usuario idusr;
+    private Asignacion asig;
+    private Trabajo tbj;
+    private Usuario usr;
 
     public AsignaDTO() {
     }
 
-    public Date getFecha_asignacion() {
-        return fecha_asignacion;
+    public AsignaDTO(Asignacion asig, Trabajo tbj, Usuario usr) {
+        this.asig = asig;
+        this.tbj = tbj;
+        this.usr = usr;
+    }
+    
+
+    public Asignacion getAsig() {
+        return asig;
     }
 
-    public void setFecha_asignacion(Date fecha_asignacion) {
-        this.fecha_asignacion = fecha_asignacion;
+    public void setAsig(Asignacion asig) {
+        this.asig = asig;
     }
 
-    public int getEstado() {
-        return estado;
+    public Trabajo getTbj() {
+        return tbj;
     }
 
-    public void setEstado(int estado) {
-        this.estado = estado;
+    public void setTbj(Trabajo tbj) {
+        this.tbj = tbj;
     }
 
-    public Trabajo getIdtrabajo() {
-        return idtrabajo;
+    public Usuario getUsr() {
+        return usr;
     }
 
-    public void setIdtrabajo(Trabajo idtrabajo) {
-        this.idtrabajo = idtrabajo;
+    public void setUsr(Usuario usr) {
+        this.usr = usr;
     }
 
-    public Usuario getIdusr() {
-        return idusr;
-    }
-
-    public void setIdusr(Usuario idusr) {
-        this.idusr = idusr;
-    }
+    
 
  
 

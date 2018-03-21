@@ -55,14 +55,14 @@ public class AsignaTrabajoServlet extends HttpServlet {
         try {
            java.util.Date fecha = new Date();  
            AsignaDTO asigna=new AsignaDTO();
-           asigna.setFecha_asignacion(fecha);
-           asigna.setEstado(1);
+           asigna.getAsig().setFechaAsignacion(fecha);
+           asigna.getAsig().setEstadoAsignacion(1);
            int idtbj=Integer.parseInt(request.getParameter("idTbj"));
            Trabajo tbj=objTrabajoSessionBean.buscaTbjXid(idtbj);
-           asigna.setIdtrabajo(tbj);
+           asigna.setTbj(tbj);
            int idUsr=Integer.parseInt(request.getParameter("cmbUsuario"));
            Usuario usr=objUsuarioSessionBean.usrXID(idUsr);
-           asigna.setIdusr(usr);
+           asigna.setUsr(usr);
                         
             this.objAsignaSessionBean.addAsignacion(asigna);
             

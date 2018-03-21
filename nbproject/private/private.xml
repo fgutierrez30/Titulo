@@ -3,16 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/fgutierrez/Downloads/LegalWorkEJB/LegalWorkEJB/src/java/cl/fgutierrez/legalwork/dto/AsignaDTO.java</file>
-            <file>file:/C:/Users/fgutierrez/Downloads/LegalWorkEJB/LegalWorkEJB/web/actTrabajo.jsp</file>
-            <file>file:/C:/Users/fgutierrez/Downloads/LegalWorkEJB/LegalWorkEJB/src/java/cl/fgutierrez/legalwork/persistencia/TrabajoSessionBean.java</file>
-            <file>file:/C:/Users/fgutierrez/Downloads/LegalWorkEJB/LegalWorkEJB/src/java/cl/fgutierrez/legalwork/presentacion/RecuperaUsuarioServlet.java</file>
-            <file>file:/C:/Users/fgutierrez/Downloads/LegalWorkEJB/LegalWorkEJB/src/java/cl/fgutierrez/legalwork/presentacion/AsignaTrabajoServlet.java</file>
-            <file>file:/C:/Users/fgutierrez/Downloads/LegalWorkEJB/LegalWorkEJB/src/java/cl/fgutierrez/legalwork/entidades/Asignacion.java</file>
-            <file>file:/C:/Users/fgutierrez/Downloads/LegalWorkEJB/LegalWorkEJB/web/asignatrabajo.jsp</file>
-            <file>file:/C:/Users/fgutierrez/Downloads/LegalWorkEJB/LegalWorkEJB/web/trabajosAsignados.jsp</file>
-            <file>file:/C:/Users/fgutierrez/Downloads/LegalWorkEJB/LegalWorkEJB/src/java/cl/fgutierrez/legalwork/persistencia/AsignaSessionBean.java</file>
-            <file>file:/C:/Users/fgutierrez/Downloads/LegalWorkEJB/LegalWorkEJB/web/usuarios.jsp</file>
+            <file>file:/C:/Users/fgutierrez/Documents/GitHub/Titulo/src/java/cl/fgutierrez/legalwork/presentacion/RecuperaTbjsAsig.java</file>
+            <file>file:/C:/Users/fgutierrez/Documents/GitHub/Titulo/web/tbjGen.jsp</file>
         </group>
     </open-files>
 </project-private>

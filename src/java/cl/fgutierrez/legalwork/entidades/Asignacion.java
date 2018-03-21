@@ -32,6 +32,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Asignacion.findAll", query = "SELECT a FROM Asignacion a"),
+    @NamedQuery(name = "Asignacion.listado", query = "SELECT NEW cl.fgutierrez.legalwork.dto.AsignaDTO(a,a.idTrabajo,a.idUsr)"
+    +" FROM Asignacion a"),
     @NamedQuery(name = "Asignacion.findByIdAsignacion", query = "SELECT a FROM Asignacion a WHERE a.idAsignacion = :idAsignacion"),
     @NamedQuery(name = "Asignacion.findByFechaAsignacion", query = "SELECT a FROM Asignacion a WHERE a.fechaAsignacion = :fechaAsignacion"),
     @NamedQuery(name = "Asignacion.findByEstadoAsignacion", query = "SELECT a FROM Asignacion a WHERE a.estadoAsignacion = :estadoAsignacion")})
