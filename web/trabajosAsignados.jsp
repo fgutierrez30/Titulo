@@ -26,7 +26,7 @@
                    <div class="content-wrapper">
             <section class="content-header">
                 <h1>
-                 Asignacion de Trabajos
+                 Trabajos Asignados
                 </h1>
             </section>
            
