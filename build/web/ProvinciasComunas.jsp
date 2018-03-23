@@ -33,12 +33,12 @@
      </section>
 
     <!-- Main content -->
-    <section class="content">
+    <section class="content"> 
 
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Maestro Provincias y Comunas</h3>
+          <h3 class="box-title">Maestro Ciudades y Comunas</h3>
 
         </div>
         <div class="box-body">
@@ -46,7 +46,7 @@
           <!-- general form elements -->
           <div class="box box-success">
             <div class="box-header with-border">
-              <h3 class="box-title">Nueva Provincia</h3>
+              <h3 class="box-title">Nueva Ciudad</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -65,7 +65,7 @@
                 </div>
                   
                   <div class="form-group col-xs-6">
-                  <label for="exampleInputPassword1">Nombre Provincia</label>
+                  <label for="exampleInputPassword1">Nombre Ciudad</label>
                   <input type="text" class="form-control" id="exampleInputPassword1" name="txtNomCiudad">
                 </div>
                
@@ -80,6 +80,11 @@
           </div>
           <!-- /.box -->
           </div>
+            
+            
+            
+            
+            
             <div class="col-md-6">
           <!-- general form elements -->
           <div class="box box-success">
@@ -130,14 +135,92 @@
           <!-- /.box -->
     
            </div>
+            
+            
+            
+            
+            <div class="col-md-6">
+          <!-- general form elements -->
+           <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Ciudades</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+              <table class="table table-condensed">
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>Nombre</th>
+                  <th></th>
+                </tr>
+                <tr>
+                  <td>1.</td>
+                  <td>Update software</td>
+                  
+                  <td><span class="badge bg-red">Editar</span></td>
+                </tr>
+                              
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+    
+           </div>
+            
+            
+            
+            
+            <div class="col-md-6">
+          <!-- general form elements -->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Comunas</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+              <table class="table table-condensed">
+                <tr>
+                  <th style="width: 10px">#</th>
+                  <th>Nombre</th>
+                  <th></th>
+                </tr>
+                <tr>
+                  <td>1.</td>
+                  <td>Update software</td>
+                  <td><span class="badge bg-red">Editar</span></td>
+                </tr>
+                               
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+    
+           </div>
+            
+            
+            
+            
+            
         </div>
         <!-- /.box-body -->
         
         <!-- /.box-footer-->
       </div>
+      
+            <!-- /.box-body -->
+             </section>
+          </div>
+      
+      </div>
+      
+    
+      
+        
       <!-- /.box -->
 
-    </section>
+   
     <!-- /.content -->
   </div>
 
