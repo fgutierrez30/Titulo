@@ -29,9 +29,8 @@ public class RecuperaAsigXUsr extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        int id=Integer.parseInt(request.getParameter("idUsr"));
         HttpSession session=request.getSession();
+        int id=Integer.parseInt(request.getParameter("idUsr"));
         List <AsignaDTO>listAsig=this.objAsignaSessionBean.listaAsignadosXID(id);
         session.setAttribute("listadoAsig", listAsig);
         

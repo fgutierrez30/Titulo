@@ -8,8 +8,8 @@
         <%@include file="master/head.jsp" %>
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
-        <jsp:include page="./getAsigXID" flush="true"/>
-        <jsp:useBean id="trabajosAsig" class="cl.fgutierrez.legalwork.dto.AsignaDTO" scope="page"></jsp:useBean>
+          <jsp:include page="./getAsigXID?idUsr=${usuarioConectado.usr.idUsr}" flush="true"/>
+           <jsp:useBean id="trabajosAsig" class="cl.fgutierrez.legalwork.dto.AsignaDTO" scope="page"></jsp:useBean>
         
         
         <c:choose>
@@ -18,7 +18,9 @@
             </c:when>
             <c:otherwise>
                 <jsp:useBean id="usuarioConectado" class="cl.fgutierrez.legalwork.dto.UsuarioPerfilDTO" scope="session"></jsp:useBean>  
-                <input type="hidden" name="idUsr" value="${usuarioConectado.usr.idUsr}"/>
+                
+                
+              
                 
                 <%@include file="master/header.jsp" %>
                 <%@include file="menu.jsp" %>
@@ -52,20 +54,18 @@
             <div class="box-body table-responsive no-padding">
               <table class="table table-hover">
                 <tr>
-                  <th>ID</th>
-                  <th>Cliente</th>
-                  <th>Tipo de Trabajo</th>
-                  <th>Descripcion</th>
-                  <th>Fecha de Inicio</th>
-                  <th>Fecha de Entrega</th>
-                  <th>Estado</th>
+                  <th>Usuario Encargado</th>
+                  <th>Fecha de Asignacion</th>
+                  <th>Trabajo</th>
+                  <th>Fecha Vencimiento</th>
                 </tr>
                 <c:forEach items="${listadoAsig}" var="asigUsr">
                 <tr>
-                    <td><c:out value="${asigUsr.usr.nomusr}"/></td>
-                    
-                    
-                  <td><button data-toggle="modal" data-target="#view-modal" data-id="${trabajosPen.trabajo.idTrabajo}" id="getTrabajo" class="btn btn-sm btn-danger">Editar</button></td>
+                    <td><c:out value="${asigUsr.usr.nomUsr}"/> <c:out value="${asigUsr.usr.apellUsr}"/></td>
+                    <td><fmt:formatDate pattern="dd-MM-yyyy" value="${asigUsr.asig.fechaAsignacion}"/></td>
+                    <td><c:out value="${asigUsr.tbj.detTrabajo}"/></td>
+                    <td><fmt:formatDate pattern="dd-MM-yyyy" value="${asigUsr.tbj.fechaFinTrabajo}"/></td>
+                    <td><button>Editar</button></td>
                                   
                 </tr>
                 </c:forEach>
@@ -83,36 +83,7 @@
             
         </div>
         
-      <div id="view-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog"> 
-     <div class="modal-content">  
    
-        <div class="modal-header"> 
-           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> 
-           <h4 class="modal-title">
-           <i class="glyphicon glyphicon-user"></i> Asignar Trabajo
-           </h4> 
-        </div> 
-            
-        <div class="modal-body">                     
-           <div id="modal-loader" style="display: none; text-align: center;">
-               
-              
-               
-               
-               <!-- ajax loader -->
-           <img src="ajax-loader.gif">
-           </div>
-                            
-           <!-- mysql data will be load here -->                          
-           <div id="dynamic-content"></div>
-        </div> 
-        
-                        
-    </div> 
-  </div>
-</div>      
-           
                 
               </c:otherwise>
         </c:choose>

@@ -7,6 +7,7 @@ package cl.fgutierrez.legalwork.presentacion;
 
 import cl.fgutierrez.legalwork.dto.AsignaDTO;
 import cl.fgutierrez.legalwork.dto.TrabajoTpTrabajoClienteDTO;
+import cl.fgutierrez.legalwork.entidades.Asignacion;
 import cl.fgutierrez.legalwork.entidades.Trabajo;
 import cl.fgutierrez.legalwork.entidades.Usuario;
 import cl.fgutierrez.legalwork.persistencia.AsignaSessionBean;
@@ -54,17 +55,19 @@ public class AsignaTrabajoServlet extends HttpServlet {
         
         try {
            java.util.Date fecha = new Date();  
-           AsignaDTO asigna=new AsignaDTO();
-           asigna.getAsig().setFechaAsignacion(fecha);
-           asigna.getAsig().setEstadoAsignacion(1);
+           Asignacion asig=new Asignacion();
+           asig.setFechaAsignacion(fecha);
+           asig.setEstadoAsignacion(1);
+           
            int idtbj=Integer.parseInt(request.getParameter("idTbj"));
            Trabajo tbj=objTrabajoSessionBean.buscaTbjXid(idtbj);
-           asigna.setTbj(tbj);
+           
            int idUsr=Integer.parseInt(request.getParameter("cmbUsuario"));
            Usuario usr=objUsuarioSessionBean.usrXID(idUsr);
-           asigna.setUsr(usr);
+           
+           AsignaDTO asi=new AsignaDTO(asig, tbj, usr);
                         
-            this.objAsignaSessionBean.addAsignacion(asigna);
+            this.objAsignaSessionBean.addAsignacion(asi);
             
             tbj.setEstadoTrabajo("Asignado");
             this.objTrabajoSessionBean.updateTrabajo(tbj);
