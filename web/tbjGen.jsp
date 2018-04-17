@@ -65,7 +65,7 @@
                     <td><fmt:formatDate pattern="dd-MM-yyyy" value="${trabajosAsig.asig.fechaAsignacion}" /> </td>
                     <td><c:out value="${trabajosAsig.tbj.detTrabajo}"/></td>
                     <td><fmt:formatDate pattern="dd-MM-yyyy" value="${trabajosAsig.tbj.fechaFinTrabajo}"/></td>
-                  <td><button>Editar</button></td>
+                    <td></td>
                                   
                 </tr>
                 </c:forEach>              
