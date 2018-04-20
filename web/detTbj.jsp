@@ -1,4 +1,8 @@
+<%@page import="java.text.DateFormat"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import = "java.io.*,java.util.*, javax.servlet.*" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -38,7 +42,12 @@
         <div class="col-xs-12">
           <h2 class="page-header">
             <i class="fa fa-globe"></i> AdminLTE, Inc.
-            <small class="pull-right">Date: 2/10/2014</small>
+            
+      <small class="pull-right">Fecha: <% Date date = new Date();
+      SimpleDateFormat ft = new SimpleDateFormat ("dd/MM/yyyy");
+      out.print(ft.format(date));%> </small>
+        
+      
           </h2>
         </div>
         <!-- /.col -->

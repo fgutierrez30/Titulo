@@ -65,7 +65,7 @@
                     <td><fmt:formatDate pattern="dd-MM-yyyy" value="${asigUsr.asig.fechaAsignacion}"/></td>
                     <td><c:out value="${asigUsr.tbj.detTrabajo}"/></td>
                     <td><fmt:formatDate pattern="dd-MM-yyyy" value="${asigUsr.tbj.fechaFinTrabajo}"/></td>
-                    <td><button>Editar</button></td>
+                    <td><a href="detTbj.jsp"><span class="badge bg-red">Editar</span></a></td>
                                   
                 </tr>
                 </c:forEach>
