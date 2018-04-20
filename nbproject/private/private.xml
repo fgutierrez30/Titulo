@@ -2,20 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-<<<<<<< HEAD
-            <file>file:/Users/felipegutierrez/Documents/GitHub/Titulo/src/java/cl/fgutierrez/legalwork/presentacion/ModificaUsuarioServlet.java</file>
-            <file>file:/Users/felipegutierrez/Documents/GitHub/Titulo/web/actUsr.jsp</file>
-            <file>file:/Users/felipegutierrez/Documents/GitHub/Titulo/web/clientes.jsp</file>
-            <file>file:/Users/felipegutierrez/Documents/GitHub/Titulo/web/actCliente.jsp</file>
-            <file>file:/Users/felipegutierrez/Documents/GitHub/Titulo/src/java/cl/fgutierrez/legalwork/presentacion/ModificaClienteServlet.java</file>
-            <file>file:/Users/felipegutierrez/Documents/GitHub/Titulo/web/usuarios.jsp</file>
-=======
-            <file>file:/C:/Users/fgutierrez/Documents/GitHub/Titulo/web/trabajosAsignados.jsp</file>
-            <file>file:/C:/Users/fgutierrez/Documents/GitHub/Titulo/src/java/cl/fgutierrez/legalwork/entidades/Trabajo.java</file>
-            <file>file:/C:/Users/fgutierrez/Documents/GitHub/Titulo/src/java/cl/fgutierrez/legalwork/entidades/Asignacion.java</file>
-            <file>file:/C:/Users/fgutierrez/Documents/GitHub/Titulo/web/detTbj.jsp</file>
->>>>>>> 86a382a5e69f8d845cbcdd3e97f85792ae183d73
-        </group>
+        <group/>
     </open-files>
 </project-private>
