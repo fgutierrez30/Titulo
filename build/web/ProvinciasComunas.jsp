@@ -1,6 +1,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +13,12 @@
         
         <jsp:include page="./getAllCiudades" flush="true"/>
         <jsp:useBean id="ciudades" class="cl.fgutierrez.legalwork.entidades.Ciudad" scope="page"/>
+        
+        <jsp:include page="./getAllComuna" flush="true"/>
+        <jsp:useBean id="comunas" class="cl.fgutierrez.legalwork.entidades.Comuna" scope="page"></jsp:useBean>
+        
+        
+        
         <c:choose>
             <c:when test="${sessionScope.usuarioConectado==null}">
                 <jsp:forward page="login.jsp"/>
@@ -153,13 +160,14 @@
                   <th>Nombre</th>
                   <th></th>
                 </tr>
+                <c:forEach items="${listarCiudades}" var="ciudad" >
                 <tr>
-                  <td>1.</td>
-                  <td>Update software</td>
+                    <td><c:out value="${ciudad.idCiudad}"/></td>
+                    <td><c:out value="${ciudad.nomCiudad}"/></td>
                   
                   <td><span class="badge bg-red">Editar</span></td>
                 </tr>
-                              
+                 </c:forEach>           
               </table>
             </div>
             <!-- /.box-body -->
@@ -186,11 +194,12 @@
                   <th></th>
                 </tr>
                 <tr>
-                  <td>1.</td>
-                  <td>Update software</td>
+                    <c:forEach items="${listarComuna}" var="comuna">  
+                        <td><c:out value="${comuna.idComuna}"/></td>
+                        <td><c:out value="${comuna.nomComuna}"/></td>
                   <td><span class="badge bg-red">Editar</span></td>
                 </tr>
-                               
+                 </c:forEach>             
               </table>
             </div>
             <!-- /.box-body -->

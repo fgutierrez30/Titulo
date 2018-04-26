@@ -7,8 +7,11 @@ package cl.fgutierrez.legalwork.presentacion;
 
 
 import cl.fgutierrez.legalwork.dto.ComunaDTO;
+import cl.fgutierrez.legalwork.entidades.Ciudad;
+import cl.fgutierrez.legalwork.entidades.Comuna;
 import cl.fgutierrez.legalwork.persistencia.ComunaSessionBean;
 import java.io.IOException;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,6 +34,10 @@ public class RecuperaComunaServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        HttpSession sesion=request.getSession();
+        List<Comuna> listaComuna=this.objComunaSessionBean.getAllComuna();
+        sesion.setAttribute("listarComuna", listaComuna);
         
     }
 
