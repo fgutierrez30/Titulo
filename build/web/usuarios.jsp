@@ -147,7 +147,7 @@
                       
                   </td>
                   
-                  <td><button data-toggle="modal" data-target="#view-modal" data-id="${usuarios.usr.idUsr}" id="getUser" class="btn btn-sm btn-danger">Editar</button></td>
+                  <td><button data-toggle="modal" data-target="#view-modal" data-id="${usuarios.usr.idUsr}" id="getUsr" class="btn btn-sm btn-danger">Editar</button></td>
                   
                 
                   
@@ -215,7 +215,7 @@
 <script>
 $(document).ready(function(){
 	
-	$(document).on('click', '#getUser', function(e){
+	$(document).on('click', '#getUsr', function(e){
 		
 		e.preventDefault();
 		

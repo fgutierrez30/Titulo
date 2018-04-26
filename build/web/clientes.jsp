@@ -111,7 +111,7 @@
                   <td>
                       <c:out value="${clientes.correoCliente}"/>
                   </td>
-                  <td><a href="${modificaCliente}"><span class="badge bg-red" >Editar</span></a></td>
+                  <td><button data-toggle="modal" data-target="#view-modal" data-id="${usuarios.usr.idUsr}" id="getCliente" class="btn btn-sm btn-danger">Editar</button></td>
                 </tr>
                 </c:forEach>
                 
@@ -124,71 +124,7 @@
            </div>
             
         </div>
-        <!-- /.box-body -->
-    <c:if test="${sessionScope.objetoAeditar!=null}">
-   <jsp:useBean id="objetoAeditar" class="cl.fgutierrez.legalwork.entidades.Cliente" scope="page"/>
-                    
-       <div class="col-md-9">            
-      <br>
-          <div class="box box-danger">
-          <div class="box-header with-border">
-            <h3 class="box-title">Actualiza Perfil</h3>
-            <div class="box-tools pull-right">
-              <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-            </div><!-- /.box-tools -->
-          </div><!-- /.box-header -->
-          <div class="box-body">
-            <form role="form" name="frmPerfil" method="post" action="./actualizaCliente">
-              <div class="box-body">
-                  <div class="form-group col-xs-3">
-                  <label for="exampleInputEmail1">Rut Cliente</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" name="txtIdPerfil" value="<c:out value="${sessionScope.objetoAeditar.rutCliente}"/>" readonly="readonly">
-                </div>
-                <div class="form-group col-xs-3">
-                  <label for="exampleInputEmail1">Razon Social</label>
-                  <input type="text" class="form-control"  name="txtRazonSocAct" value="<c:out value="${sessionScope.objetoAeditar.razonSocial}"/>">
-                </div>
-                
-                <div class="form-group col-xs-3">
-                  <label for="exampleInputPassword1">E-Mail</label>
-                  <input type="email" class="form-control" id="exampleInputPassword1" name="txtEmailAct" value="<c:out value="${sessionScope.objetoAeditar.correoCliente}"/>">
-                 </div>
-                <div class="form-group col-xs-3">
-                  <label for="exampleInputEmail1">Telefono</label>
-                  <input type="text" class="form-control"  name="txtFonoAct" value="<c:out value="${sessionScope.objetoAeditar.telefCliente}"/>">
-                </div>
-               
-<!--                <div class="form-group">
-                     
-                  <div class="radio">
-                    <label>
-                        <input type="radio" name="rbEstado" id="optionsRadios1" value="1" checked="" >
-                      Activo
-                    </label>
-                  </div>
-                    
-                  <div class="radio">
-                    <label>
-                        <input type="radio" name="rbEstado" id="optionsRadios2" value="2">
-                      Bloqueado
-                    </label>
-                  </div>
-                              
-                </div>-->
-                
-                 
-              </div>
-              <!-- /.box-body -->
-
-              <div class="box-footer">
-                <button type="submit" class="btn btn-danger">Actualizar</button>
-              </div>
-            </form>
-          </div><!-- /.box-body -->
-        </div><!-- /.box -->
-        
-    </div>  
-     </c:if>
+   
         <!-- /.box-footer-->
       </div>
       <!-- /.box -->
@@ -202,10 +138,82 @@
   </div>
 
    
+  <div id="view-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog"> 
+            <div class="modal-content">  
+
+               <div class="modal-header"> 
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> 
+                  <h4 class="modal-title">
+                  <i class="glyphicon glyphicon-user"></i> Modificar Cliente
+                  </h4> 
+               </div> 
+
+               <div class="modal-body">                     
+                  <div id="modal-loader" style="display: none; text-align: center;">
+
+
+
+
+                      <!-- ajax loader -->
+                  <img src="ajax-loader.gif">
+                  </div>
+
+                  <!-- mysql data will be load here -->                          
+                  <div id="dynamic-content"></div>
+               </div> 
+
+
+           </div> 
+         </div>
+</div>             
+                
+                
+                
         
         
       
               </c:otherwise>
         </c:choose>
+        
+
+     <script>
+$(document).ready(function(){
+	
+	$(document).on('click', '#getCliente', function(e){
+		
+		e.preventDefault();
+		
+		var uid = $(this).data('id');   // it will get id of clicked row
+		
+		$('#dynamic-content').html(''); // leave it blank before ajax call
+		$('#modal-loader').show();      // load ajax loader
+		
+		$.ajax({
+			url: './modificarUsuario',
+			type: 'GET',
+			data: 'id_usr='+uid,
+			dataType: 'html'
+		})
+		.done(function(data){
+			console.log(data);	
+			$('#dynamic-content').html('');    
+			$('#dynamic-content').html(data); // load response 
+			$('#modal-loader').hide();		  // hide ajax loader	
+		})
+		.fail(function(){
+			$('#dynamic-content').html('<i class="glyphicon glyphicon-info-sign"></i> Something went wrong, Please try again...');
+			$('#modal-loader').hide();
+		});
+		
+	});
+	
+});
+
+</script>
+    
+        
+        
+        
     </body>
 </html>
