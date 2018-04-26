@@ -3,6 +3,7 @@
 <%@page import="java.util.Date"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import = "java.io.*,java.util.*, javax.servlet.*" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -20,7 +21,7 @@
             </c:when>
             <c:otherwise>
                 <jsp:useBean id="usuarioConectado" class="cl.fgutierrez.legalwork.dto.UsuarioPerfilDTO" scope="session"></jsp:useBean>  
-                
+                <jsp:useBean id="objTrabajo" class="cl.fgutierrez.legalwork.dto.TrabajoTpTrabajoClienteDTO" scope="page"/>
                 
                 <%@include file="master/header.jsp" %>
                 <%@include file="menu.jsp" %>
@@ -41,7 +42,7 @@
       <div class="row">
         <div class="col-xs-12">
           <h2 class="page-header">
-            <i class="fa fa-globe"></i> AdminLTE, Inc.
+              <i class="fa fa-globe"></i> <c:out value="${sessionScope.objTrabajo.tpTrabajo.nomTipoTrabajo}"/>, <c:out value="${sessionScope.objTrabajo.trabajo.detTrabajo}" />
             
       <small class="pull-right">Fecha: <% Date date = new Date();
       SimpleDateFormat ft = new SimpleDateFormat ("dd/MM/yyyy");
@@ -55,33 +56,29 @@
       
            <div class="row invoice-info">
         <div class="col-sm-4 invoice-col">
-          From
+         <strong> Cliente </strong>
           <address>
-            <strong>Admin, Inc.</strong><br>
-            795 Folsom Ave, Suite 600<br>
-            San Francisco, CA 94107<br>
-            Phone: (804) 123-5432<br>
-            Email: info@almasaeedstudio.com
+            Razon Social:  <c:out value="${sessionScope.objTrabajo.cliente.razonSocial}"/><br>
+            Rut:  <c:out value="${sessionScope.objTrabajo.cliente.rutCliente}"/><br>
+            Email:  <c:out value="${sessionScope.objTrabajo.cliente.correoCliente}"/><br>
+            Telefono: <c:out value="${sessionScope.objTrabajo.cliente.telefCliente}" /><br>
+            
           </address>
         </div>
         <!-- /.col -->
         <div class="col-sm-4 invoice-col">
-          To
+         <strong> Trabajo </strong>
           <address>
-            <strong>John Doe</strong><br>
-            795 Folsom Ave, Suite 600<br>
-            San Francisco, CA 94107<br>
-            Phone: (555) 539-1037<br>
-            Email: john.doe@example.com
+              Fecha Inicio: <fmt:formatDate pattern="dd-MM-yyyy" value="${sessionScope.objTrabajo.trabajo.fechaInicioTrabajo}"/><br>
+              Fecha Término: <fmt:formatDate pattern="dd-MM-yyyy" value="${sessionScope.objTrabajo.trabajo.fechaFinTrabajo}"/><br>
+            
           </address>
         </div>
         <!-- /.col -->
         <div class="col-sm-4 invoice-col">
-          <b>Invoice #007612</b><br>
+            <b>ID Trabajo #<c:out value="${sessionScope.objTrabajo.trabajo.idTrabajo}"/></b><br>
           <br>
-          <b>Order ID:</b> 4F3S8J<br>
-          <b>Payment Due:</b> 2/22/2014<br>
-          <b>Account:</b> 968-34567
+          
         </div>
         <!-- /.col -->
       </div>
