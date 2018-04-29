@@ -1,11 +1,28 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 
 <!DOCTYPE html>
 <html>
     <head>
         <%@include file="master/head.jsp" %>
+        
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            
+  
+ 
+  
+
+          <script>
+      
+      $(document).ready(function () {
+        $('#tblComuna').DataTable();
+        $('#tblCiudad').DataTable();
+        
+    });
+      
+  </script>
+
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
         <jsp:include page="./getAllRegion" flush="true"/>
@@ -17,6 +34,8 @@
         <jsp:include page="./getAllComuna" flush="true"/>
         <jsp:useBean id="comunas" class="cl.fgutierrez.legalwork.entidades.Comuna" scope="page"></jsp:useBean>
         
+        
+          
         
         
         <c:choose>
@@ -149,28 +168,33 @@
             <div class="col-md-6">
           <!-- general form elements -->
            <div class="box">
-            <div class="box-header">
+            <div class="box-header with-border">
               <h3 class="box-title">Ciudades</h3>
             </div>
             <!-- /.box-header -->
-            <div class="box-body no-padding">
-              <table class="table table-condensed">
+            <div class="box-body">
+                <table class="table table-condensed" id="tblCiudad">
+                    <thead>
                 <tr>
                   <th style="width: 10px">#</th>
                   <th>Nombre</th>
-                  <th></th>
-                </tr>
-                <c:forEach items="${listarCiudades}" var="ciudad" >
-                <tr>
-                    <td><c:out value="${ciudad.idCiudad}"/></td>
-                    <td><c:out value="${ciudad.nomCiudad}"/></td>
                   
+                  <th style="width: 40px"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach items="${listarCiudades}" var="ciudad">
+                <tr>
+                  <td><c:out value="${ciudad.idCiudad}"/></td>
+                  <td><c:out value="${ciudad.nomCiudad}"/></td>
                   <td><span class="badge bg-red">Editar</span></td>
                 </tr>
-                 </c:forEach>           
+                 </c:forEach>
+                </tbody>
               </table>
             </div>
             <!-- /.box-body -->
+            
           </div>
           <!-- /.box -->
     
@@ -187,18 +211,22 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
-              <table class="table table-condensed">
+                <table class="table table-condensed" id="tblComuna">
+                    <thead>
                 <tr>
                   <th style="width: 10px">#</th>
                   <th>Nombre</th>
                   <th></th>
                 </tr>
+                    </thead>
+                    <tbody>
                 <tr>
                     <c:forEach items="${listarComuna}" var="comuna">  
                         <td><c:out value="${comuna.idComuna}"/></td>
                         <td><c:out value="${comuna.nomComuna}"/></td>
                   <td><span class="badge bg-red">Editar</span></td>
                 </tr>
+                </tbody>
                  </c:forEach>             
               </table>
             </div>
@@ -236,5 +264,10 @@
                 
               </c:otherwise>
         </c:choose>
+  
+ 
+
+ 
+
     </body>
 </html>
