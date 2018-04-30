@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/felipegutierrez/Documents/GitHub/Titulo/src/java/cl/fgutierrez/legalwork/entidades/Entidad.java</file>
-            <file>file:/Users/felipegutierrez/Documents/GitHub/Titulo/web/clientes.jsp</file>
-            <file>file:/Users/felipegutierrez/Documents/GitHub/Titulo/src/conf/persistence.xml</file>
-            <file>file:/Users/felipegutierrez/Documents/GitHub/Titulo/web/master/head.jsp</file>
-            <file>file:/Users/felipegutierrez/Documents/GitHub/Titulo/web/ProvinciasComunas.jsp</file>
+            <file>file:/Users/felipegutierrez/Documents/GitHub/Titulo/src/java/cl/fgutierrez/legalwork/presentacion/EntidadServlet.java</file>
+            <file>file:/Users/felipegutierrez/Documents/GitHub/Titulo/src/java/cl/fgutierrez/legalwork/persistencia/EntidadSessionBean.java</file>
+            <file>file:/Users/felipegutierrez/Documents/GitHub/Titulo/src/java/cl/fgutierrez/legalwork/persistencia/ClienteSessionBean.java</file>
+            <file>file:/Users/felipegutierrez/Documents/GitHub/Titulo/src/java/cl/fgutierrez/legalwork/presentacion/RecuperaClienteServlet.java</file>
+            <file>file:/Users/felipegutierrez/Documents/GitHub/Titulo/web/entidades.jsp</file>
         </group>
     </open-files>
 </project-private>

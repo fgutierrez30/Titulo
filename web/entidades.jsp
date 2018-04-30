@@ -51,23 +51,23 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" name="frmUsuario" method="post" action="./getAllClient">
+            <form role="form" name="frmUsuario" method="post" action="./getEntidad">
               <div class="box-body">
                 <div class="form-group col-xs-6">
                   <label for="exampleInputEmail1">Nombre</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" name="txtRut">
+                  <input type="text" class="form-control" id="exampleInputEmail1" name="txtNombre">
                 </div>
                   <div class="form-group col-xs-6">
                   <label for="exampleInputEmail1">Direccion</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" name="txtRazonSocial">
+                  <input type="text" class="form-control" id="exampleInputEmail1" name="txtDireccion">
                 </div>
                   <div class="form-group col-xs-6">
                   <label for="exampleInputPassword1">Telefono</label>
-                  <input type="email" class="form-control" id="exampleInputPassword1" name="txtEmail">
+                  <input type="text" class="form-control" id="exampleInputPassword1" name="txtFono">
                  </div>
                   <div class="form-group col-xs-6">
                    <label for="exampleInputPassword1">Comuna</label>
-                    <select class="form-control" name="cmbCiudad">
+                    <select class="form-control" name="cmbComuna">
                       <option value="0">(Seleccione)</option>
                       <c:forEach items="${listarComuna}" var="comuna">
                           <option value="${comuna.idComuna}"><c:out value="${comuna.nomComuna}"/> </option>
@@ -76,6 +76,10 @@
                      
                     </select>
                   </div>
+                  <div class="form-group col-xs-6">
+                  <label for="exampleInputPassword1">Correo</label>
+                  <input type="email" class="form-control" id="exampleInputPassword1" name="txtEmail">
+                 </div>
               </div>
               <!-- /.box-body -->
 
