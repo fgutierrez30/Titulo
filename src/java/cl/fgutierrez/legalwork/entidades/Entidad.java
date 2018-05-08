@@ -40,6 +40,12 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Entidad.findByTelefEntidad", query = "SELECT e FROM Entidad e WHERE e.telefEntidad = :telefEntidad")})
 public class Entidad implements Serializable {
 
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 80)
+    @Column(name = "correo", nullable = false, length = 80)
+    private String correo;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -153,6 +159,14 @@ public class Entidad implements Serializable {
     @Override
     public String toString() {
         return "c.fgutierrez.legalwork.entidades.Entidad[ idEntidad=" + idEntidad + " ]";
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
     
 }

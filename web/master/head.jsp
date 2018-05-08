@@ -25,3 +25,5 @@
     <script src="js/app.min.js"></script>
 
     <script src="js/demo.js"></script>
+     <script src="js/DataTable.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="http://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">

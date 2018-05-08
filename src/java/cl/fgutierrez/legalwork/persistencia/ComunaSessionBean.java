@@ -32,5 +32,10 @@ public class ComunaSessionBean {
         return em.createNamedQuery("Comuna.findAll", Comuna.class)
                  .getResultList();
     }
+    
+    public Comuna comunaXID(int id)
+    {
+        return  em.createNamedQuery("Comuna.findByIdComuna", Comuna.class).setParameter("idComuna", id).getSingleResult();
+    }
    
 }
