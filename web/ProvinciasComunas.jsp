@@ -8,7 +8,34 @@
         <%@include file="master/head.jsp" %>
         
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-            
+    
+   <script>
+    
+    $(document).ready( function () {
+        
+    $('#ejemplo').DataTable(
+            {
+                language:{
+                    
+                    search: "Buscar:",
+                    sInfoEmpty:"Mostrando registros del 0 al 0 de un total de 0 registros",
+                    sInfo:"Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    oPaginate: {
+                                sFirst:    "Primero",
+                                sLast:     "Último",
+                                sNext:     "Siguiente",
+                                sPrevious: "Anterior"
+                                },
+                    sInfoFiltered:   "(filtrado de un total de _MAX_ registros)",
+                    sLengthMenu:     "Mostrar _MENU_ registros"
+                }
+            } 
+                );
+    
+    } );
+    
+</script>
+  
   
  
   
@@ -16,8 +43,50 @@
           <script>
       
       $(document).ready(function () {
-        $('#tblComuna').DataTable();
-        $('#tblCiudad').DataTable();
+        $('#tblComuna').DataTable(
+                
+                {
+                language:{
+                    
+                    search: "Buscar:",
+                    sInfoEmpty:"Mostrando registros del 0 al 0 de un total de 0 registros",
+                    sInfo:"Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    oPaginate: {
+                                sFirst:    "Primero",
+                                sLast:     "Último",
+                                sNext:     "Siguiente",
+                                sPrevious: "Anterior"
+                                },
+                    sInfoFiltered:   "(filtrado de un total de _MAX_ registros)",
+                    sLengthMenu:     "Mostrar _MENU_ registros"
+                }
+            }
+                
+                
+                
+                );
+        $('#tblCiudad').DataTable(
+                
+                 {
+                language:{
+                    
+                    search: "Buscar:",
+                    sInfoEmpty:"Mostrando registros del 0 al 0 de un total de 0 registros",
+                    sInfo:"Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    oPaginate: {
+                                sFirst:    "Primero",
+                                sLast:     "Último",
+                                sNext:     "Siguiente",
+                                sPrevious: "Anterior"
+                                },
+                    sInfoFiltered:   "(filtrado de un total de _MAX_ registros)",
+                    sLengthMenu:     "Mostrar _MENU_ registros"
+                }
+            }
+                
+                
+                
+                );
         
     });
       

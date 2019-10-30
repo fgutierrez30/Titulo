@@ -9,7 +9,6 @@ import cl.fgutierrez.legalwork.dto.CiudadDTO;
 import cl.fgutierrez.legalwork.entidades.Ciudad;
 import cl.fgutierrez.legalwork.persistencia.CiudadSessionBean;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;

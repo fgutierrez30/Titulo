@@ -37,5 +37,10 @@ public class ComunaSessionBean {
     {
         return  em.createNamedQuery("Comuna.findByIdComuna", Comuna.class).setParameter("idComuna", id).getSingleResult();
     }
+    
+    public List<Comuna> getComunaXCiudad(int id)
+    {
+        return em.createNamedQuery("Comuna.findByCiudad",Comuna.class).setParameter("idCiudad", id).getResultList();
+    }
    
 }

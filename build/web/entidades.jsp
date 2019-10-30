@@ -8,8 +8,8 @@
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
         
-        <jsp:include page="./getAllComuna" flush="true"/>
-        <jsp:useBean id="comunas" class="cl.fgutierrez.legalwork.entidades.Comuna" scope="page"></jsp:useBean>
+        <jsp:include page="./getAllCiudades" flush="true"/>
+        <jsp:useBean id="ciudades" class="cl.fgutierrez.legalwork.entidades.Ciudad" scope="page"></jsp:useBean>
         
         
        
@@ -65,14 +65,24 @@
                   <label for="exampleInputPassword1">Telefono</label>
                   <input type="text" class="form-control" id="exampleInputPassword1" name="txtFono">
                  </div>
+                  
                   <div class="form-group col-xs-6">
-                   <label for="exampleInputPassword1">Comuna</label>
-                    <select class="form-control" name="cmbComuna">
+                   <label for="exampleInputPassword1">Ciudad</label>
+                   <select class="form-control" name="cmbCiudad" id="cmbCiudad">
                       <option value="0">(Seleccione)</option>
-                      <c:forEach items="${listarComuna}" var="comuna">
-                          <option value="${comuna.idComuna}"><c:out value="${comuna.nomComuna}"/> </option>
+                      <c:forEach items="${listarCiudades}" var="ciudad">
+                          <option value="${ciudad.idCiudad}"><c:out value="${ciudad.nomCiudad}"/> </option>
                           
                       </c:forEach>
+                     
+                    </select>
+                  </div>
+                  
+                  <div class="form-group col-xs-6">
+                   <label for="exampleInputPassword1">Comuna</label>
+                    <select class="form-control" name="cmbComuna" id="cmbComuna">
+                      <option value="0">(Seleccione)</option>
+                      
                      
                     </select>
                   </div>
@@ -146,7 +156,75 @@
               </c:otherwise>
         </c:choose>
         
+        <script>
+            
+$(document).ready(function() {
+    
+    
+    // Obtener estados
+        $.ajax({
+        // Obtener municipios
+        $("#cmbCiudad").change(function(){
+        var estado = $("#cmbCiudad option:selected").val();
+        $.ajax({
+        type: "POST",
+        url: "./comXCity",
+        data: { id_ciudad : estado } 
+        }).done(function(data){
+        $("#cmbComuna").html(data);
+        });
+        });
 
+
+
+            });
+        });   
+        
+        
+        </script>
+
+
+
+
+
+$(document).ready(function(){
+	
+	$(document).on('click', '#getUsr', function(e){
+		
+		e.preventDefault();
+		
+		var uid = $(this).data('id');   // it will get id of clicked row
+		
+		$('#dynamic-content').html(''); // leave it blank before ajax call
+		$('#modal-loader').show();      // load ajax loader
+		
+		$.ajax({
+			url: './modificarUsuario',
+			type: 'GET',
+			data: 'id_usr='+uid,
+			dataType: 'html'
+		})
+		.done(function(data){
+			console.log(data);	
+			$('#dynamic-content').html('');    
+			$('#dynamic-content').html(data); // load response 
+			$('#modal-loader').hide();		  // hide ajax loader	
+		})
+		.fail(function(){
+			$('#dynamic-content').html('<i class="glyphicon glyphicon-info-sign"></i> Something went wrong, Please try again...');
+			$('#modal-loader').hide();
+		});
+		
+	});
+	
+});
+
+
+
+        
+        
+        
+        </script>
         
         
         
